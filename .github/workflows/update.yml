@@ -21,9 +21,11 @@ jobs:
           GH_TOKEN: ${{ github.token }}
         run: ./scripts/update-formula.sh
       - name: Commit if it changed
+        env:
+          GH_TOKEN: ${{ github.token }}
         run: |
           if git diff --quiet; then echo "formula is up to date"; exit 0; fi
-          ver="$(sed -n 's/^  version "\(.*\)"/\1/p' Formula/dtk.rb)"
+          ver="$(gh release view -R amaye15/dtk --json tagName -q .tagName)"
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git commit -am "dtk $ver"

@@ -4,7 +4,6 @@
 set -euo pipefail
 repo="amaye15/dtk"
 tag="${1:-$(gh release view -R "$repo" --json tagName -q .tagName)}"
-ver="${tag#v}"
 sha() { gh release download "$tag" -R "$repo" -p "dtk-$tag-$1.tar.gz.sha256" -O - | awk '{print $1}'; }
 url() { echo "https://github.com/$repo/releases/download/$tag/dtk-$tag-$1.tar.gz"; }
 mac_arm=aarch64-apple-darwin; mac_x64=x86_64-apple-darwin
@@ -14,7 +13,6 @@ cat > "$(dirname "$0")/../Formula/dtk.rb" <<RUBY
 class Dtk < Formula
   desc "Data token killer: a Claude Code hook that turns big tables into lean summaries"
   homepage "https://github.com/amaye15/dtk"
-  version "$ver"
   license "MIT"
 
   if OS.mac? && Hardware::CPU.arm?

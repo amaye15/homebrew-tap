@@ -1,7 +1,6 @@
 class Dtk < Formula
   desc "Data token killer: a Claude Code hook that turns big tables into lean summaries"
   homepage "https://github.com/amaye15/dtk"
-  version "0.3.0"
   license "MIT"
 
   if OS.mac? && Hardware::CPU.arm?
