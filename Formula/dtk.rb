@@ -4,17 +4,17 @@ class Dtk < Formula
   license "MIT"
 
   if OS.mac? && Hardware::CPU.arm?
-    url "https://github.com/amaye15/dtk/releases/download/v0.3.0/dtk-v0.3.0-aarch64-apple-darwin.tar.gz"
-    sha256 "de66efce11f13ee6dee713dbd2374a8c77da7b90e536f265080187c87feffde0"
+    url "https://github.com/amaye15/dtk/releases/download/v0.4.0/dtk-v0.4.0-aarch64-apple-darwin.tar.gz"
+    sha256 "8383931fe72012023503e4cc59203f72fc73d0f19815bcb3d169ec0602d4f71f"
   elsif OS.mac? && Hardware::CPU.intel?
-    url "https://github.com/amaye15/dtk/releases/download/v0.3.0/dtk-v0.3.0-x86_64-apple-darwin.tar.gz"
-    sha256 "b2608e574eaae7d639b78d683394086e727ab5910c124ac5e7291f2d5beb6f73"
+    url "https://github.com/amaye15/dtk/releases/download/v0.4.0/dtk-v0.4.0-x86_64-apple-darwin.tar.gz"
+    sha256 "cd5a74b65c30a243b2237fbbe48d6ba3c0633493758887557d9204fb5313a700"
   elsif OS.linux? && Hardware::CPU.arm?
-    url "https://github.com/amaye15/dtk/releases/download/v0.3.0/dtk-v0.3.0-aarch64-unknown-linux-musl.tar.gz"
-    sha256 "284b007ceb3053a96ade94af08014dd7c98a618f97fd9778a305c105e643285a"
+    url "https://github.com/amaye15/dtk/releases/download/v0.4.0/dtk-v0.4.0-aarch64-unknown-linux-musl.tar.gz"
+    sha256 "4ba61714d0e25cfd3e3d78bf0b1c37021ef5531ce4a203ab26dbf43c7f7ca692"
   elsif OS.linux? && Hardware::CPU.intel?
-    url "https://github.com/amaye15/dtk/releases/download/v0.3.0/dtk-v0.3.0-x86_64-unknown-linux-musl.tar.gz"
-    sha256 "73348c68627382ad1f531d46410bcab0bc61511209ca723de2cfea9aca67fbb4"
+    url "https://github.com/amaye15/dtk/releases/download/v0.4.0/dtk-v0.4.0-x86_64-unknown-linux-musl.tar.gz"
+    sha256 "7e1fc87faab1ba9000ca7bd555ae3fc25969c30794428de5b5e0e251e27fd197"
   end
 
   def install
